@@ -8,7 +8,7 @@ import (
 func main() {
 	config.InitBot()
 	config.Bot.Handle("/start", func(ctx telebot.Context) error {
-		return ctx.Send("Hello!")
+		return ctx.Send(config.BackendURL)
 	})
 	config.Bot.Start()
 }

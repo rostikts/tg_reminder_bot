@@ -20,4 +20,5 @@ func InitBot() {
 		log.Panic("Bot was not started")
 	}
 	BackendURL = os.Getenv("BACKEND_URL")
+	log.Print("Bot is initialized")
 }

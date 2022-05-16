@@ -20,7 +20,7 @@ func GetCurrentUser(message telebot.Message) *user.User {
 		if err := currentUser.(*user.User).GetToken(); err != nil {
 			log.Printf("error during token extraction %s", err.Error())
 		}
-		TokenCache.Set(strconv.FormatInt(message.Chat.ID, 10), currentUser, time.Hour)
+		TokenCache.Set(strconv.FormatInt(message.Chat.ID, 10), currentUser, time.Minute*50)
 	}
 	return currentUser.(*user.User)
 }
